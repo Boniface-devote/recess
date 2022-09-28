@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devote Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="DisplayAllPosts()">
+    <nav>
+<!-------nav left -->
+        <div class="nav-left">
+            <img src="logo2.png" class="logo">
+            
+        </div>
+<!-----nav right----------->
+        <div class="nav-right">
+            
+            <div class="nav-user-icon online">
+                <img class="profilePic" src="profile-pic.jpg">
+                
+            </div>
+            <div class="nav-Settings" onclick="settingsMenuToggle()">
+                <img src="tools.png">
+            </div> 
+        </div>
+<!-------------settings menu------------------>
+        <div class="settings-menu">
+            <div id="dark-btn">
+                <span></span>
+            </div>
+
+            <div class="settings-menu-inner">
+                <div class="user-profile">
+                    <img  class="profilePic" src="profile-pic.jpg" width="50px" height="40px">
+                    <div>
+                        <p class="userName">Devote Boniface</p>
+                        <a href="#">Theme settings</a>
+                    </div>
+                </div>
+                
+                <div class="setting-links">
+                    <img src="logout.png" class="settings-icon">
+                    <a href="index.html">Logout<img src="arrow.png" width="10px">
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </nav> 
+    <div class="container">
+        <!-------------end of top nav------------------>
+        <!-------------left side------------------>
+        <div class="left-sidebar">
+            <div class="imp-links">
+                <a class="profile">
+                    <div class="profile-photo">
+                        <img  class="profilePic" src="profile-pic.jpg">
+                    </div>
+                    <div class="handle">
+                        <h3  class="userName">Devote</h3>
+                        <p class="text-muted">makChat</p>
+                    </div>
+                </a>
+                <a class="home" href="home.html"><img src="home.png"><span>Home</span></a>
+                <a class="friends" href="#" onclick = "DisplayFriends()"><img src="friends.png"><span>Friends</span></a>
+                   
+                    
+                <div class="friendsOn"  id="friendsOn" >
+                    <div class="friend">
+                        <div class="friends-pic">
+                            <img src="profile-1.jpg">
+                        </div>
+                        <div class="handle">
+                            <h3  class="userName">Devote</h3>
+                            <p class="text-muted">makChat</p>
+                        </div>
+                    </div>
+                   
+                </div>
+                <a class="watch" href="#" onclick="DisplayIntersets()"><img src="watch.png" ><span>personal interests</span></a>
+                <div class="interests">
+                    <p class="text-muted" id="userInterest">Enter in Your personal statement</p>
+                    
+
+                    <label class="btn btn-primary" onclick="updateInterests()">Update</label>
+                    <input type="text" id="inputedText" placeholder="Update personal statement">
+                </div>
+            </div>
+                 <!------------hobbies--------------------------->
+            <div class="create-btn">
+                <label class="btn btn-primary" for="create-post" onclick="AddHobby()">Create</label>
+                <p><input id="hobbie name" type="text" placeholder="input your hobby">
+                </p>
+                
+            </div>
+           
+            <div class="shortcut-links" id="Hobbies"> 
+            </div>
+        </div>
+        <!------------end of left sidebar--------------------------->
+        <!------------middle--------------------------->
+        <div class="middle-content" >
+            <!-------------------post table-------------------------->
+            <div class="story-gallery">
+                <div class="story story1">
+                    <!-------------------- <img src="upload.png">------------------------->
+                    <p>Boniface</p>
+                </div>
+                <div class="story story2">
+                     <!-------------------- <img src="member-1.png">------------------------->
+                    
+                    <p>Cecilia</p>
+                </div>
+                <div class="story story3">
+                     <!-------------------- <img src="member-2.png">------------------------->
+                    
+                    <p>Gertrude</p>
+                </div>
+                <div class="story story4">
+                     <!-------------------- <img src="member-3.png">------------------------->
+                    
+                    <p>Rashid</p>
+                </div>
+                <div class="story story5">
+                    <!--------------------  <img src="member-4.png">------------------------->
+                   
+                    <p>Priscilla</p>
+                </div>
+            </div>
+             <!---==========create new post==========-->
+             <div class="write-post-container" id="middle content">
+                <div class="user-profile">
+                    <img  class="profilePic" src="profile-pic.jpg" width="50px" height="40px">
+                    <div>
+                        <p class="userName">Devote Boniface</p>
+                    </div>
+                </div>
+                <div  class="post-input-container">
+                    <textarea rows="3" placeholder="Whats on your mind?" id="inputed text"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"><img src="live-video.png">Live Video</a>
+                        <a href="#" onclick="InputFile()">
+                            <div style="display: none;">
+                                <input type="file" id="file input" onchange="LoadImg()" accept="image/*,video/*">
+                            </div>
+                            <img  src="photo.png">Photo/Video
+                        </a>
+                        <a href="#"><img src="feeling.png" >Feeling/Activity</a>
+
+                    </div>
+                    <div class="create-btn2">
+                        <label class="btn2 btn-primary2" for="create-post" onclick="AddPost('none')">Create</label>
+                   </div>
+                </div>
+            </div>
+            
+             
+            
+            
+            <!---  -----------forth post----------------->   
+            <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="profile-15.jpg" width="50px" height="40px">
+                        <div>
+                            <p>Rashid K</p>
+                            <span>27 MAY 2022  20:13 PM</span>
+                        </div>
+                    </div>
+                    <a href="#"><img src="dots.png" width="4px"></a>
+                </div>
+               
+                <p class="post-text">Enjoy<span> @Group 6 work </span>All the amazing
+                    projects i have done on my YoutubeChannel and leave a like or comment.<a href="#">
+                #Group 6 work</a><a href="#">#YoutubeChannel</a></p>
+                <img src="feed-image-5.png" class="post-img">
+
+                <div class="post-row">
+                    <div class="activity-icon">
+                        <div><img src="like-blue.png">20</div>
+                        <div><img src="comments.png">1</div>
+                        <div><img src="share.png">2</div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="profile-pic.jpg"> <small><img src="down.png"></small>
+                    </div>
+                </div>
+            </div>
+                <!---           end of  posts-->   
+            <button type="button" class="load-more-btn">Load more</button>
+        </div>
+      <!------------end of middle---------------------->
+        <!------------right side---------------------->
+        <div class="right-sidebar">
+<!--=-------education history   ----------------->
+            <div class="top">
+                <div class="sidebar-title">
+                    <h>Educatoin background</h>
+                </div>
+                <div id="educ_bg">
+
+                </div>
+                </div>
+ <!--=-------adding education history   ----------------->
+                <div class="sidebar-title">
+                    <h>ADD education history</h>
+                    <div class="addtoggle-btn">
+                        <input type="button" value="add" onclick="educationtoggle()">
+                    </div>
+                </div>
+                <div class="education-form"  id="education-form" >
+                    <div class="form-popup">
+                        <div >
+                            <span>Instution</span>
+                            <span><img src="location.png" width="20px"><input type="text" placeholder="Institution" id="insititution" >
+                            </span><br>
+                            <span>Year</span>
+                            <span><img src="date.png" width="20px"><input type="date" placeholder="the year" id="date">
+                            </span><br>
+                            <span>Award</span>
+                            <span><img src="degree.png" width="20px"><input type="text" placeholder="enter the Award" id="award">
+                            </span>
+                            <br>
+                            <div class="create-btn">
+                                <label class="btn btn-primary" for="create-post" onclick="AddEducation()">Add</label>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copright 2022 - #Group 6</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
